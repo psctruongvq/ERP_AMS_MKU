@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>3c52f30f-92be-4dd5-9ca6-51dc81d1dfeb</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.5cm</BottomMargin>
+  <RightMargin>0.5cm</RightMargin>
+  <PageWidth>8.27in</PageWidth>
+  <ReportParameters>
+    <ReportParameter Name="BangChu">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>BangChu</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <ReportItems>
+          <Textbox Name="textbox19">
+            <Left>2.375in</Left>
+            <Top>1in</Top>
+            <rd:DefaultName>textbox19</rd:DefaultName>
+            <ZIndex>18</ZIndex>
+            <Width>3.125in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>="Số : " + Fields!So.Value.ToString()</Value>
+          </Textbox>
+          <Textbox Name="textbox18">
+            <Left>6.125in</Left>
+            <Top>3.75in</Top>
+            <ZIndex>17</ZIndex>
+            <Width>1.5in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Value>NGƯỜI ĐỀ NGHỊ</Value>
+          </Textbox>
+          <Textbox Name="textbox17">
+            <Left>4.25in</Left>
+            <Top>3.75in</Top>
+            <ZIndex>16</ZIndex>
+            <Width>1.625in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Value>PHỤ TRÁCH ĐƠN VỊ</Value>
+          </Textbox>
+          <Textbox Name="textbox16">
+            <Left>2.125in</Left>
+            <Top>3.75in</Top>
+            <ZIndex>15</ZIndex>
+            <Width>1.875in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Value>TRƯỞNG BAN TÀI CHÍNH</Value>
+          </Textbox>
+          <Textbox Name="textbox15">
+            <Left>0.25in</Left>
+            <Top>3.75in</Top>
+            <ZIndex>14</ZIndex>
+            <Width>1.625in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Value>BAN TỔNG GIÁM ĐỐC</Value>
+          </Textbox>
+          <Textbox Name="textbox14">
+            <Left>3.75in</Left>
+            <Top>3.375in</Top>
+            <ZIndex>13</ZIndex>
+            <Width>3.875in</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <Format>"Tp.HCM, Ngày "dd" tháng "MM" năm "yyyy</Format>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!Ngay.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox13">
+            <Left>1.125in</Left>
+            <Top>2.875in</Top>
+            <ZIndex>12</ZIndex>
+            <Width>6.5in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!LyDo.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox12">
+            <Left>1.375in</Left>
+            <Top>2.5in</Top>
+            <ZIndex>11</ZIndex>
+            <Width>6.25in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Parameters!BangChu.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox11">
+            <Left>3.625in</Left>
+            <Top>2.125in</Top>
+            <ZIndex>10</ZIndex>
+            <Width>4in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <Format>#,##0</Format>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!SoTien.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox10">
+            <Left>1.75in</Left>
+            <Top>1.75in</Top>
+            <ZIndex>9</ZIndex>
+            <Width>5.875in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!TenBoPhan.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox8">
+            <Left>0.25in</Left>
+            <Top>2.875in</Top>
+            <ZIndex>8</ZIndex>
+            <Width>0.75in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>LÝ DO :</Value>
+          </Textbox>
+          <Textbox Name="textbox7">
+            <Left>0.25in</Left>
+            <Top>2.5in</Top>
+            <ZIndex>7</ZIndex>
+            <Width>1.125in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>BẰNG CHỮ :</Value>
+          </Textbox>
+          <Textbox Name="textbox6">
+            <Left>0.25in</Left>
+            <Top>2.125in</Top>
+            <ZIndex>6</ZIndex>
+            <Width>3.375in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>ĐỀ NGHỊ CHO TÔI ĐƯỢC THANH TOÁN SỐ TIỀN :</Value>
+          </Textbox>
+          <Textbox Name="textbox5">
+            <Left>0.25in</Left>
+            <Top>1.75in</Top>
+            <ZIndex>5</ZIndex>
+            <Width>1.5in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>ĐƠN VỊ CÔNG TÁC :</Value>
+          </Textbox>
+          <Textbox Name="textbox4">
+            <Left>0.25in</Left>
+            <Top>1.375in</Top>
+            <rd:DefaultName>textbox4</rd:DefaultName>
+            <ZIndex>4</ZIndex>
+            <Width>0.875in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>TÔI TÊN :</Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <ZIndex>3</ZIndex>
+            <Width>2.375in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.625in</Height>
+            <Value>ĐÀI TRUYỀN HÌNH
+THÀNH PHỐ HỒ CHÍ MINH
+</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Left>2.3125in</Left>
+            <Top>0.75in</Top>
+            <rd:DefaultName>textbox3</rd:DefaultName>
+            <ZIndex>2</ZIndex>
+            <Width>3.25in</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>14pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>PHIẾU ĐỀ NGHỊ THANH TOÁN</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Left>3.875in</Left>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.625in</Height>
+            <Value>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập - Tự do - Hạnh phúc
+------ oOo ------</Value>
+          </Textbox>
+          <Textbox Name="textbox9">
+            <Left>1.125in</Left>
+            <Top>1.375in</Top>
+            <rd:DefaultName>textbox9</rd:DefaultName>
+            <Width>6.5in</Width>
+            <Style>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Fields!TenNhanVien.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <DataSetName>ERP_Library_Report_DeNghiThanhToanList</DataSetName>
+      </List>
+    </ReportItems>
+    <Height>4in</Height>
+  </Body>
+  <rd:ReportID>e1102293-03f5-4f8f-856c-fd860c8b07e6</rd:ReportID>
+  <LeftMargin>0.5cm</LeftMargin>
+  <DataSets>
+    <DataSet Name="ERP_Library_Report_DeNghiThanhToanList">
+      <rd:DataSetInfo>
+        <rd:DataSetName>ERP_Library.Report</rd:DataSetName>
+        <rd:ObjectDataSourceType>ERP_Library.Report.DeNghiThanhToan, ERP_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>DeNghiThanhToan</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="LyDo">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LyDo</DataField>
+        </Field>
+        <Field Name="MaPhieu">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>MaPhieu</DataField>
+        </Field>
+        <Field Name="Ngay">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>Ngay</DataField>
+        </Field>
+        <Field Name="So">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>So</DataField>
+        </Field>
+        <Field Name="SoTien">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>SoTien</DataField>
+        </Field>
+        <Field Name="TenBoPhan">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TenBoPhan</DataField>
+        </Field>
+        <Field Name="TenNhanVien">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TenNhanVien</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.75in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <Language>en-US</Language>
+  <TopMargin>0.5cm</TopMargin>
+  <PageHeight>5.83in</PageHeight>
+</Report>

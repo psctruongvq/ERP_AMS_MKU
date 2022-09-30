@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chodongcanxoa" xml:space="preserve">
+    <value>Vui Lòng Chọn Dòng Cần Xóa</value>
+  </data>
+  <data name="chonduongdancanphuchoi" xml:space="preserve">
+    <value>Chọn Đường Dẫn Phục Hồi Cơ Sở Dữ Liệu</value>
+  </data>
+  <data name="chonduongdancansaoluu" xml:space="preserve">
+    <value>Chọn Đường Dẫn Sao Lưu Cơ Sở Dữ Liệu</value>
+  </data>
+  <data name="chonnhomkhachhang" xml:space="preserve">
+    <value>Vui Lòng Chọn Nhóm Khách Hàng</value>
+  </data>
+  <data name="chuachonduthongtin" xml:space="preserve">
+    <value>Chưa Chọn Đủ Thông Tin</value>
+  </data>
+  <data name="chuachonmanhanvien" xml:space="preserve">
+    <value>Chưa Chọn Mã Nhân Viên</value>
+  </data>
+  <data name="chuachonngay" xml:space="preserve">
+    <value>Chưa Chọn Ngày Cần Tìm</value>
+  </data>
+  <data name="chuanhapdulieucantim" xml:space="preserve">
+    <value>Chưa Nhập Dữ Liệu Cần Tìm</value>
+  </data>
+  <data name="chuanhapduongdan" xml:space="preserve">
+    <value>Chưa Nhập Đường Dẫn</value>
+  </data>
+  <data name="chuanhapsophieu" xml:space="preserve">
+    <value>Chưa Nhập Số Phiếu</value>
+  </data>
+  <data name="coloiphatsinh" xml:space="preserve">
+    <value>Có Lổi Phát Sinh</value>
+  </data>
+  <data name="dangnhaphethong" xml:space="preserve">
+    <value>Đăng Nhập Hệ Thống</value>
+  </data>
+  <data name="dangnhapthanhcong" xml:space="preserve">
+    <value>Đăng Nhập Thành Công</value>
+  </data>
+  <data name="dongnaykhong" xml:space="preserve">
+    <value>Dòng Này Không ?</value>
+  </data>
+  <data name="dongyxoa" xml:space="preserve">
+    <value>Bạn Đồng Ý Xóa</value>
+  </data>
+  <data name="dongyxoacacdong" xml:space="preserve">
+    <value>Bạn Đồng Ý Xóa Dòng Này Không ?</value>
+  </data>
+  <data name="emailkhonghople" xml:space="preserve">
+    <value>Địa Chỉ Email Không Hợp Lệ Vui Lòng Nhập Lại</value>
+  </data>
+  <data name="khongcodulieu" xml:space="preserve">
+    <value>Không Có Dữ Liệu</value>
+  </data>
+  <data name="Khongcoquyensuabaocao" xml:space="preserve">
+    <value>Bạn Không Có Quyền Sửa Báo Cáo</value>
+  </data>
+  <data name="khongtimthaytennguoidung" xml:space="preserve">
+    <value>Không Tìm Thấy Tên Ngưởi Dùng</value>
+  </data>
+  <data name="khongtruycapduocdulieu" xml:space="preserve">
+    <value>Không Truy Cập Được Dữ Liệu</value>
+  </data>
+  <data name="loidangnhap" xml:space="preserve">
+    <value>Lổi Đăng Nhập</value>
+  </data>
+  <data name="luudulieu" xml:space="preserve">
+    <value>Bạn Có Muốn Lưu Lại Không</value>
+  </data>
+  <data name="luuthanhcong" xml:space="preserve">
+    <value>Lưu Thành Công</value>
+  </data>
+  <data name="luuthatbai" xml:space="preserve">
+    <value>Lưu Tất Bại</value>
+  </data>
+  <data name="mabitrung" xml:space="preserve">
+    <value>Mã Đã Tồn Tại</value>
+  </data>
+  <data name="matkhaukhonghople" xml:space="preserve">
+    <value>Mật Khẩu Không Hợp Lệ</value>
+  </data>
+  <data name="ngaycantimkhonghople" xml:space="preserve">
+    <value>Ngày Cần Tìm Không Hợp Lệ</value>
+  </data>
+  <data name="ngaylon" xml:space="preserve">
+    <value>Ngày Bắt Đầu Phải Nhỏ Hơn Ngày Kết Thúc</value>
+  </data>
+  <data name="nhapmakhachhang" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Khách Hàng</value>
+  </data>
+  <data name="nhapmanhacungcap" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Nhà Cung Cấp</value>
+  </data>
+  <data name="nhapmanhanvien" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Nhân Viên</value>
+  </data>
+  <data name="nhapmaphieu" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Phiếu</value>
+  </data>
+  <data name="nhapsodonhang" xml:space="preserve">
+    <value>Vui Lòng Nhập Số Đơn Hàng</value>
+  </data>
+  <data name="nhapsoluong" xml:space="preserve">
+    <value>Vui Lòng Nhập Số Lượng</value>
+  </data>
+  <data name="nhapsosotk" xml:space="preserve">
+    <value>Chưa Nhập Số Sổ Tiết Kiệm</value>
+  </data>
+  <data name="nhaptaptincansaoluu" xml:space="preserve">
+    <value>Bạn chưa nhập đường dẫn của tập tin sao lưu</value>
+  </data>
+  <data name="nhaptencuahang" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Cửa Hàng</value>
+  </data>
+  <data name="nhaptenkhachhang" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Khách Hàng</value>
+  </data>
+  <data name="nhaptennhacungcap" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Nhà Cung Cấp</value>
+  </data>
+  <data name="nhaptennhanvien" xml:space="preserve">
+    <value>Nhập Tên Nhân Viên</value>
+  </data>
+  <data name="phieunaykhongduocsua" xml:space="preserve">
+    <value>Phiếu Này Không Được Sữa</value>
+  </data>
+  <data name="phuchoithanhcong" xml:space="preserve">
+    <value>Phục Hồi Cơ Sở Dữ Liệu Thành Công</value>
+  </data>
+  <data name="random" xml:space="preserve">
+    <value>Thông tin Random chưa hợp lệ : Nhập (0 &lt;=  Giờ &lt;= 23) ; (0 &lt;= Phút1 &lt; Phút2 &lt;=59) </value>
+  </data>
+  <data name="saimatkhau" xml:space="preserve">
+    <value>Mật Khẩu Không Đúng</value>
+  </data>
+  <data name="saoluuthanhcong" xml:space="preserve">
+    <value>Sao Lưu Cơ Sở Dữ Liệu Thành Công</value>
+  </data>
+  <data name="saoluuthatbai" xml:space="preserve">
+    <value>Sao Lưu Cơ Sở Dữ Liệu Thất Bại</value>
+  </data>
+  <data name="sodonhangkohople" xml:space="preserve">
+    <value>Số Đơn Hàng Đã Tồn Tại, Vui Lòng Nhập Lại Số Đơn Hàng Mớii </value>
+  </data>
+  <data name="sobienbanbitrung" xml:space="preserve">
+    <value>Số Biên Bản Bị Trùng</value>
+  </data>
+  <data name="sohopdongbitrung" xml:space="preserve">
+    <value>Số Hợp Đồng Bị Trùng</value>
+  </data>
+  <data name="solongtra" xml:space="preserve">
+    <value>Số Lượng Trả Phải Nhỏ Hơn Số Lượng Xuất</value>
+  </data>
+  <data name="soluongkhongdu" xml:space="preserve">
+    <value>Số Lượng Không Đủ Vui Lòng Nhập Lại</value>
+  </data>
+  <data name="soluongtranhohonsoluongxuat" xml:space="preserve">
+    <value>Số Lượng Trả Phải Nhỏ Hơn Số Lượng Xuất</value>
+  </data>
+  <data name="sophieubitrung" xml:space="preserve">
+    <value>Số Phiếu Bị Trùng</value>
+  </data>
+  <data name="sosobitrung" xml:space="preserve">
+    <value>Số Sổ Bị Trùng</value>
+  </data>
+  <data name="thanhcong" xml:space="preserve">
+    <value>Cập Nhật Thành Công</value>
+  </data>
+  <data name="thaoTac" xml:space="preserve">
+    <value>Bạn Có Thật Sự Muốn Thoát</value>
+  </data>
+  <data name="thatbai" xml:space="preserve">
+    <value>Cập Nhật Thất Bại</value>
+  </data>
+  <data name="thoigiancamkhonghople" xml:space="preserve">
+    <value>Thời Gian  Cầm Không Hợp Lệ</value>
+  </data>
+  <data name="thongbao" xml:space="preserve">
+    <value>Thông Báo</value>
+  </data>
+  <data name="VuaCapNhatGiaVang" xml:space="preserve">
+    <value>Bạn vừa cập nhật giá vàng!/n Để tiếp tục bạn đóng và mở lại form "Cập nhật giá vàng".</value>
+  </data>
+  <data name="vuilongchoncongthuctinh" xml:space="preserve">
+    <value>Vui Lòng Chọn Công Thức Tính</value>
+  </data>
+  <data name="vuilongchonhesodieuchinhnhan" xml:space="preserve">
+    <value>Vui Lòng Chọn Hệ Số Điều Chỉnh Nhân</value>
+  </data>
+  <data name="vuilongchonnam" xml:space="preserve">
+    <value>Vui Lòng Chọn Năm</value>
+  </data>
+  <data name="vuilongchonngachluong" xml:space="preserve">
+    <value>Vui Lòng Chọn Ngạch Lương</value>
+  </data>
+  <data name="vuilongchonthang" xml:space="preserve">
+    <value>Vui Lòng Chọn Tháng</value>
+  </data>
+  <data name="vuilongnhapbacluong" xml:space="preserve">
+    <value>Vui Lòng Nhập Bậc Lương</value>
+  </data>
+  <data name="vuilongnhapdonvithoigian" xml:space="preserve">
+    <value>Vui Lòng Nhập Đơn Vị Thời Gian</value>
+  </data>
+  <data name="vuilongnhaphesoluong" xml:space="preserve">
+    <value>Vui Lòng Nhập Hệ Số Lương</value>
+  </data>
+  <data name="vuilongnhaphesophucap" xml:space="preserve">
+    <value>Vui Lòng Nhập Hệ Số Phụ Cấp</value>
+  </data>
+  <data name="vuilongnhapma" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã</value>
+  </data>
+  <data name="vuilongnhapmatrichnop" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Trích Nộp</value>
+  </data>
+  <data name="vuilongnhapngaytrichnop" xml:space="preserve">
+    <value>Vui Lòng Nhập Ngày Trích Nộp</value>
+  </data>
+  <data name="vuilongnhaptenloaiphucap" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Loại Phụ Cấp</value>
+  </data>
+  <data name="vuilongnhaptenloaiphucaptx" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Loại Phụ Cấp Thường Xuyên</value>
+  </data>
+  <data name="vuilongnhapthoigiannangbac" xml:space="preserve">
+    <value>Vui Lòng Nhập Thời Gian Nậng Bậc</value>
+  </data>
+  <data name="vuilongnhaptongtien" xml:space="preserve">
+    <value>Vui Lòng Nhập Tổng Tiền</value>
+  </data>
+  <data name="xoacacdong" xml:space="preserve">
+    <value>Xóa Các Dòng</value>
+  </data>
+  <data name="xoadong" xml:space="preserve">
+    <value>Xóa Dòng</value>
+  </data>
+  <data name="chuachonnhanviencantaolich" xml:space="preserve">
+    <value>Chưa Chọn Nhân Viên Cần Tạo Lịch</value>
+  </data>
+  <data name="nhapnam" xml:space="preserve">
+    <value>Vui Lòng Nhập Năm</value>
+  </data>
+  <data name="nhapthang" xml:space="preserve">
+    <value>Vui Lòng Nhập Tháng</value>
+  </data>
+  <data name="tenky" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên  Kỳ </value>
+  </data>
+  <data name="nhapmaloaidieuchinhluong" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Loại Điều Chỉnh Lương</value>
+  </data>
+  <data name="nhaptenloaidieuchinhluong" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Loại Điều Chỉnh Lương</value>
+  </data>
+  <data name="KhongChoRanDom" xml:space="preserve">
+    <value>Ca này đã được chấm ,không được chấm lại</value>
+  </data>
+  <data name="nhapmucthuetoida" xml:space="preserve">
+    <value>Vui Lòng Nhập Mức Thuế Tối Đa</value>
+  </data>
+  <data name="nhapmucthuetoithieu" xml:space="preserve">
+    <value>Vui Lòng Nhập Mức Thuế Tối Thiểu</value>
+  </data>
+  <data name="nhapphantramthuethunhap" xml:space="preserve">
+    <value>Vui Lòng Nhập Phần Trăm Thuế Thu Nhập</value>
+  </data>
+  <data name="sohoadon" xml:space="preserve">
+    <value>Vui Lòng Nhập Số Hóa Đơn</value>
+  </data>
+  <data name="SoSerial" xml:space="preserve">
+    <value>Vui Lòng Nhập Số Serial</value>
+  </data>
+  <data name="chonNhomChucVu" xml:space="preserve">
+    <value>Vui Lòng Chọn Nhóm Chức Vụ</value>
+  </data>
+  <data name="nhapMaHocHam" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Học Hàm</value>
+  </data>
+  <data name="nhapTenHocHam" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Học Hàm</value>
+  </data>
+  <data name="nhapMaTrinhDo" xml:space="preserve">
+    <value>Vui Lòng Nhập Mã Trình Độ</value>
+  </data>
+  <data name="nhapTenTrinhDo" xml:space="preserve">
+    <value>Vui Lòng Nhập Tên Trình Độ</value>
+  </data>
+  <data name="LoaiHopDong" xml:space="preserve">
+    <value>Vui Lòng Chọn Loại Hợp Đồng</value>
+  </data>
+  <data name="SoHopDong" xml:space="preserve">
+    <value>Vui Lòng Nhập Số Hợp Đồng</value>
+  </data>
+</root>

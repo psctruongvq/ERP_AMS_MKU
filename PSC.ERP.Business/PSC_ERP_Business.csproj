@@ -1,0 +1,1455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F3D5DB4-1D47-4DE1-AA89-920A84D2EAC6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PSC_ERP_Business</RootNamespace>
+    <AssemblyName>PSC.ERP.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\BIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csla, Version=2.1.0.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30">
+      <HintPath>..\packages\Csla.dll</HintPath>
+    </Reference>
+    <Reference Include="Log4netCustom">
+      <HintPath>..\packages\Log4netCustom.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main\Database.cs" />
+    <Compile Include="Main\Factory\CCDC\CongCuDungCu_Factory.cs" />
+    <Compile Include="Main\Factory\CCDC\CT_PhanBoChiPhiCCDCChuyenTuTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\CCDC\PhanBoChiPhiCCDCChuyenTuTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\Dizitizing\DigitizingBag_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\ChucVu_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\ChucDanh_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\BacLuong_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\ThanhPhanGiaDinh_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\UuTienGiaDinh_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\UuTienBanThan_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\NgachLuongCoBan_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\NhomNgachLuongCoBan_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\TinhThanh_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\NhanVien_Loai_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\DanToc_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\DanhMuc\TonGiao_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\ChuyenNganhDaoTao_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\NhanVien_ChuyenNganh_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\NgoaiNgu_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\NhanVien_NgoaiNgu_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\TrinhDoNgoaiNgu_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\TrinhDoTinHoc_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\TrinhDoHocVan_Factory.cs" />
+    <Compile Include="Main\Factory\NhanSu\TrinhDo\TrinhDo_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\app_UserChild_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\CongTy_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\ChungTuImport_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\PhieuNhapXuat_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\LoaiTien_FactoryM.cs" />
+    <Compile Include="Main\Factory\OldErp\NsChuongTrinh_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\CT_ChiPhiSanXuat_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\ChungTu_DiaChi_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Class\MaLoaiChiClass.cs" />
+    <Compile Include="Main\Factory\ThuChi\cnLoaiDoiTuong_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ButToan_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ChiPhiThucHien_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ChiThuLao_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ChiThuLao_NhanVien_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ChungTu_TheoDoi_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ButToan_ChiPhiHD_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\ChungTu_TheoDoiChiTiet_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\spd_DanhSachChungTuCanTim_Result_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\spd_SelectChungTuPhieuChiListforLapPhieuThu_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\PhieuThuTuPhieuChi_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\DinhKhoan_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\spd_DanhSachChungTuListByKetChuyenChiPhi_New_Result_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\KhoaSoUser_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\KyTinhLuong_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\MucNganSach_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Factorys\spd_DanhSachChiPhiSanXuatTheoThang_Result_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\Partials\spd_DanhSachChungTuCanTim_Result.cs" />
+    <Compile Include="Main\Factory\ThuChi\Partials\spd_DanhSachChiPhiSanXuatTheoThang_Result.cs" />
+    <Compile Include="Main\Factory\ThuChi\Partials\spd_DanhSachChungTuListByKetChuyenChiPhi_New_Result.cs" />
+    <Compile Include="Main\Factory\ThuChi\Partials\spd_SelectChungTuPhieuChiListforLapPhieuThu_Result.cs" />
+    <Compile Include="Main\Factory\ThuChi\Partials\tblChungTu_HoaDon.cs" />
+    <Compile Include="Main\Factory\ThuChi\Partials\tblCT_ChiPhiSanXuat.cs" />
+    <Compile Include="Main\Factory\ThuChi\spd_Select_DeNghiChuyenKhoan_ChuaLapCT_Result.cs" />
+    <Compile Include="Main\Factory\ThuChi\TamUng_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\sp_AllDoiTuong_Result_FactoryM.cs" />
+    <Compile Include="Main\Factory\ThuChi\ChungTuThuChi_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTuThuChi.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTu_DeNghiChuyenKhoan_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTu_GiayBanNT_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTu_GiayBaoCo_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTu_GiayRutTien_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTu_LenhChuyenTien_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblChungTu_UyNhiemChi_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblDeNghiChuyenKhoan_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblGiayBaoCo_Factory.cs" />
+    <Compile Include="Main\Factory\ThuChi\tblLenhChuyenTienNuocNgoai_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuKhauHaoTSCDPhanBoCCDC_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuTyLeKhauHaoTaiSanTheoBoPhan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\SuaChuaNhoVaBaoTri_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTu_HoaDonTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\CT_NghiepVuDieuChuyenChiTietTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NghiepVuDieuChuyenChiTietTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NghiepVuDoiSerialTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\SerialTaiSanCoDinhCaBiet_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\CT_ChungTuKhauHaoTSCDPhanBoCCDC_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\ProjectEmployeeResource_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\Project_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\Resource_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\TaskDependency_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\TaskJob_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\Task_Asset_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\Task_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BaoTriBaoDuong\Task_ProjectEmployeeResource_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\sp_TSCD_LayDanhSachChungTuGhiTangCuTruocNam2014_Factory.cs" />
+    <Compile Include="Main\Model\AppFunction.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\AppMenu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\AppMenusRight.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\AppTracingLog.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\AppUser.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\app_userbophan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\app_UserChild.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\app_UserPhuCap.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\app_users.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\app_UserThuLao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\CapnhatlaiTongThuNhap2011.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\capnhatTongthunhap2011.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ChonNguonBCTHKinhPhiVaQuyetToanKP.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ChungTuSoHoa.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ChungTuTF.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ChungTu_HoSoFileLuuTru.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\colen.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Context.Entities.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Context.IEntities.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\CoTamUng.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DaSachCongTacVie.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DiaChi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DiaChi_HDChoThue.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DiaChi_NhanVien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DienThoai_Fax.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DigitizingBag.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DSNhanVienNgoaiDaiSuDung.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\DuongLich.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\EntityTrackingLog.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\HDChoThue.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\HDKDVTrenTaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\HocSinhFromOtherDB.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\HTVC.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Luong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\luong_ky1.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\luong_ky2.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\LuyTienThang6.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\LuyTienThạng.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\MainModel.Meta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\MainModel1.Meta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\NganHangTong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\NgoaiGio2014.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\NhanVien_DienThoai_Fax.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\NhanVien_Email.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\NhanVien_ThongTinCoBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\NVNghi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\nx.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ondinhtn2013.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\PartialModel\BaoTriBaoDuong\tblnsNhanVien.cs" />
+    <Compile Include="Main\Model\PartialModel\BaoTriBaoDuong\Project.cs" />
+    <Compile Include="Main\Model\PartialModel\BaoTriBaoDuong\ProjectEmployeeResource.cs" />
+    <Compile Include="Main\Model\PartialModel\BaoTriBaoDuong\Task.cs" />
+    <Compile Include="Main\Model\PartialModel\BaoTriBaoDuong\Task_Asset.cs" />
+    <Compile Include="Main\Model\PartialModel\CCDC\tblCT_PhanBoChiPhiCCDCChuyenTuTaiSan.cs" />
+    <Compile Include="Main\Model\PartialModel\CCDC\tblPhanBoChiPhiCCDCChuyenTuTaiSan.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\spd_TSCD_LayTaiSanCoDinh_KiemKe_BySoHieuCaBiet_Result.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblCT_NghiepVuSuaChuaLon.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblNghiepVuDieuChuyenChiTiet.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\sp_TSCD_LayDanhSachChungTuGhiTangCuTruocNam2014_Result.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblNghiepVuSuaSoSerialTSCDCB.cs" />
+    <Compile Include="Main\Model\Project.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ProjectEmployeeResource.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\quyettoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Report.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Resource.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\SoTKTien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_DanhSachChiPhiSanXuatTheoThang_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_DanhSachChungTuCanTim_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_DanhSachChungTuListByKetChuyenChiPhi_New_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_DIGITIZING_ThongKeSoTrangTheoNgay_User_ChiTiet_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_DIGITIZING_ThongKeSoTrangTheoNgay_User_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_DIG_LayBoPhanTheoMaQuanLy_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_LichSuDieuChuyenTaiSanCoDinhCaBiet_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_SelectChungTuPhieuChiListforLapPhieuThu_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_Select_DeNghiChuyenKhoan_ChuaLapCT_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_tblKiemKeTaiSan_DanhSachTSDuocKiemKeDenNgay_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TimChungTuSoHoa_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TimFileDaDuocGanChungTu_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TimFile_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TongHopTrichKhauHao_TichHopFAST_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_ChayKHHM_2020_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_DanhSachTaiSanCoDinhHayCCDCCoDenNgay_TheoPhongBanViTriLoaiTaiSanNgungSuDung_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_DanhSachTaiSanCoDinhHayCCDCCoDenNgay_TheoPhongBanViTriLoaiTaiSan_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_KiemTraNghiepVuGhiTang_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayChiTietTaiSanTheo_MaTaiSanCoDinh_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayDanhSachDanhMucTSCDorCCDCTheoCapCha_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayDanhSachTaiSanCoDinhorCCDC_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayDanhSachTaiSanCoDinhTrongNhieuCapLoaiTaiSan_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayTaiSanCoDinhvaChiTietTaiSanTheoPhongBanDenNgay_KiemKe_New_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayTaiSanCoDinhvaChiTietTaiSanTheoPhongBanDenNgay_KiemKe_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayTaiSanCoDinhvaChiTietTaiSanTheoPhongBanDenNgay_KiemKe_Result1.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LayTaiSanCoDinh_KiemKe_BySoHieuCaBiet_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spd_TSCD_LichSuTongQuatSuDungTaiSan_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\spRpt_TSCD_ReportTongHopBaoCaoChiTietTSCDCuaDonViHCSN_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\sp_AllDoiTuong_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\sp_TSCD_ChayKHHM_New_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\sp_TSCD_ChayKHHM_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\sp_TSCD_LayDanhSachChungTuGhiTangCuTruocNam2014_Result.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tamung.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Task.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\TaskDependency.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\TaskJob.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Task_Asset.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Task_ProjectEmployeeResource.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblBoPhanERPNew.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblBoPhanERPNew_NhanVien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblBoSungDungCuPhuTung.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblButToan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblButToan_ChiPhiHD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblButToan_MucNganSach.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChiPhiThucHien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChiThuLao_NhanVien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChiTietBoPhanSuaChua.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChiTietDieuChinhGiaTri.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChiTietNguyenGiaTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChiTietTaiSanCaBiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTuImport.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTuKhauHaoTSCDPhanBoCCDC.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTuTyLePhanBoKhauHaoTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_DeNghiChuyenKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_DiaChi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_GiayBanNT.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_GiayBaoCo.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_GiayRutTien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_HoaDon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_HoaDonTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_HoaDonTaiSanMuaSuaBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_HopDong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_HopDongTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_LenhChuyenTien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_TheoDoi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_TheoDoiChiTiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblChungTu_UyNhiemChi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblcnChiThuLao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblcnLoaiDoiTuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCongCuDungCu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCongCuDungCu_PhongBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCongTy.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_ChiPhiSanXuat.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_ChungTyLePhanBoKhauHaoTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_HoaDon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_HoaDonDichVu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_NghiepVuDieuChuyenChiTiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_NghiepVuDieuChuyenNoiBo.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_NghiepVuSuaChuaLon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_NVNgungvaTaiSuDungTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_NVThanhLyvaDieuChuyenNgoaiTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblCT_PhanBoChiPhiCCDCChuyenTuTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDanhMucTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDeNghiChuyenKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDeNghiChuyenKhoan_DichVu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDiaChi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDiaChi_DoiTac.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDieuChinhGiaChiTietTSCaBiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDieuChinhGiaPhuTungTSCaBiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDieuChinhGiaTri.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDinhKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDoiTac.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDoiTuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDonViTinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblDuyetTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblGiayBaoCo.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblHangHoa.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblHoaDon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblHoaDon_DoiTac.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblHopDong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblHopDongMuaBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblInMaVachTaiSanCoDinhCaBiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblKhoaSo_MaTaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblKhoaSo_User.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblKiemKeTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblKy.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblLenhChuyenTienNuocNgoai.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblLichSuSuaChuaTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblLoaiChungTu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblLoaiHopDong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblLoaiTien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblMucNganSach.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiemThuThanhLy.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiepVuDanhGiaLai.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiepVuDieuChuyenChiTiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiepVuDieuChuyenNoiBo.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiepVuKhauHaoHaoMon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiepVuSuaChuaLon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNghiepVuSuaSoSerialTSCDCB.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNguon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsBacLuongCoBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsBoNhiem.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsBoPhan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsBoPhanMoRong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsBoPhanMoRong_NhanVien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsChucDanh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsChucVu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsChuongTrinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsChuyenMonNghiepVu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsChuyenNganhDaoTao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsDanToc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsGiamTruGiaCanh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsKhoaKyLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsKyTinhLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsLichSuBanThan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNgachLuongCoBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNgoaiNgu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNhanVien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNhanVien_ChuyenNganh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNhanVien_Loai.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNhanVien_NgoaiNgu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsNhomNgachLuongCoBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsThanhPhanGiaDinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTonGiao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTrinhDo.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTrinhDoChuyenMon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTrinhDoHocVan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTrinhDoNgoaiNgu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTrinhDoTinHoc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTrinhDoVanHoa.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsTruongDaoTao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsUuTienBanThan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblnsUuTienGiaDinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNVNgungvaTaiSuDungTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblNVThanhLyvaDieuChuyenNgoaiTSCD.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblPhanBoChiPhiCCDCChuyenTuTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblPhieuNhapXuat.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblPhieuThutuPhieuChi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblPhuongThucThanhToan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblQuocGia.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblSerialTaiSanCoDinhCaBiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTaiSanCoDinhCaBiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTaiSanCoDinhCaBiet_PhongBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTamUng.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTienTe.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTieuMucNganSach.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTiLeKhauHaoTheoTaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\tblTinhThanh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\testLoc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Thang12.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Thang122014.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ThanhLamDum.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ThueDaiThu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ThueDaTamNop.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ThuLaoGanCuoiNam.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ThuNhapDenThang12.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\ThuNhapTinhThue.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\TongHopBoPhanNhanVien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\TongTienButToanTheoChuTu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\TU312.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\vBoPhanKeCaBoPhanMoRong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_AllDoiTuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_BangKe.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_BoPhan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_BoPhanMoRong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_DieuChinhLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_DoiTuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_DonHangBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_DonHangMua.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_DonNhanHangTra.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_DonTraHangMua.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_HeThongTaiKhoanCapBa.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_LayHoatDong_Nguon_TaKhoan_ButToan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_LayTaCaCacMuc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_LayTatCaLuyKeMuc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_LayTatCaMucPhatSinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_LoaiTien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_PhuKienHH.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_Report_CTHopDongMuaNgoaiTe.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_Report_DonHangBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_Report_DonHangMua.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_report_TonKho.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_SoDuDauTamUng.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_T10.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TaiKhoanBonCap.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_TaiKhoanCapBa.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_TaiKhoanCapBa_backup.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_TaiKhoanCapBon.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_TaiKhoanCapHai.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\View_TaiKhoanCapMot.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TaiSanCoDinhCaBiet_PhongBan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TamUng.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TSCD_LoaiTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TSCD_NhomTaiSan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TSCD_SuaChuaLonBoSung.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TSCD_SuaChuaLonBoSung_DungChoStoreKHHM.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TSCD_TaiSanCoDinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\view_TSCD_TatCaBoPhan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_2012LayLaiBangLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_AllChuongTrinh2013.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_AllChuongTrinh2013CoTrung.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_BaoCaoTieuMuc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_BoPhan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ButToan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_ButToanMucNganSach.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ButToanTaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ButToanTieuMucNganSach.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_CanTruThue.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_CanTruThueDuongLich.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_CanTruThueDuongLichnew.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_CapNhatHSPCChucVu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiLaiKhenThuong2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiLailuongky12012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiLaiLuongKy12013.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiLaiPhuCap.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiLaiThuNhapNam2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiTietChuyenKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiTietThuLaoThang11.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChiTungLoaiPhuCapNam2011.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChucVuChucDanh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungKhoanChiTiet.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungTuAll.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungTuBoPhan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungTuExport.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungTuTongTien.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungTuTraRa.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChungTu_ThuLao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChuongTrinhCha.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ChuyenNganHang.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ckngay25.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_CoTaiKhoan1551.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_DanhSachChuongTrinhPhanCap.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_DanhSachTaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_DoiTuongTamUng.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_DoThueThang5.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_DSNhanVienSaiLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_DuongLich.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_GetMaxMocThoiGian_QuyetDinhNangLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_GhiAm.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_GopSoDuDauKy.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_HoatDong_Nguon_TaiKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_KetXuatThuLao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_KiemTraMuc.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_Ky3.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_LayDuLieuCuImport.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_LaySoGioTangCaTheoKy.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_LayThueCongTacVienChuyenKhoan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_LayThueCongTacVienTienMat.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_LiXi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_LuongNgay.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_Nam2012New.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_Nam2013.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_Nam2013New.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NgachLuong2011.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NgangHangChuyen.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NganHang.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NguoiPhuThuocTungThang.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NhanVienBangLuong.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_NoiLamSo.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NoTaiKhoan1551.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_NVBangLuong2011.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_PhieuThuDaVietBienLai.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_quyettoan2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_SaiQuyetDinh.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_SaiThang6.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_SaiThang9.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_SoTienDaNhapCuaChungTu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_SoTienPhuCapTheoBangPhuCap.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\V_SuaThuLao.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_Test.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_Test1.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_tfs.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ThueCongTacVienTheoPhieuChi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ThueCTVDaThuThucTe.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ThueKy3.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ThueThang5.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ThueThang6.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_ThuNhapCTV2013.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TinhLaiQT2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TinhPhuCapSoGioi.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TinhThucThu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TinhTongThuChiuThue.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TNCN.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongHopSoLieuDoiChieu.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongHopThueTNCN.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongHopTienGio.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongHopTNTheoBangLuong2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongTheoThang.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongTheoThang2012.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongThNhapNam2013.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongThuNhap2010DV07.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongThuNhapLuyKe.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TongThuNhapToiThang8.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\v_TuQuyetToan.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Model\Website_Email.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Predefined\BusinessCodeEnum.cs" />
+    <Compile Include="DemoClass.cs" />
+    <Compile Include="Main\Factory\OldErp\BoPhanMoRong_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\BoPhanMoRong_NhanVien_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\BoPhan_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\ChungTu_HopDong_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\ChungTu_HoaDon_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\PhuongThucThanhToan_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\HoaDon_DoiTac_Factory.cs" />
+    <Compile Include="Main\Factory\Sys\Sys\AppMenusRight_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuDieuChinhGiaTriTaiSan_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\InMaVachTaiSanCoDinhCaBiet_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\Ky_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\DiaChi_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\DiaChi_DoiTac_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\HopDongMuaBan_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\LoaiChungTu_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\HoaDon_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\HopDong_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\DinhKhoan_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\DoiTac_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\DoiTuong_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\DonViTinh_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\LoaiHopDong_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\Nguon_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\NhanVien_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\QuocGia_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\TaiKhoan_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\TienTe_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\TieuMucNganSach_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangDanhMuc\BoPhanERPNew_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangDanhMuc\BoPhanERPNew_NhanVien_Factory.cs" />
+    <Compile Include="Main\Factory\Report\Report_Factory.cs" />
+    <Compile Include="Main\Factory\Sys\DynamicMenu\Menu_Factory.cs" />
+    <Compile Include="Main\Factory\Sys\DynamicMenu\Function_Factory.cs" />
+    <Compile Include="Main\Factory\Sys\Log\EntityTrackingLog_Factory.cs" />
+    <Compile Include="Main\Factory\Sys\Sys\AppUser_Factory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main\Factory\OldErp\app_users_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangDanhMuc\DanhMucTSCD_Factory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Main\Factory\OldErp\ButToan_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\ButToan_MucNganSach_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChiTietDieuChinhGiaTri_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChiTietNguyenGiaTSCD_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChiTietTaiSanCaBiet_Factory.cs" />
+    <Compile Include="Main\Factory\OldErp\ChungTu_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuGhiTangTaiSan_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuSuaChuaLonTaiSan_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuDieuChuyenNgoai_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\ChungTuThanhLy_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\CT_NVThanhLyvaDieuChuyenNgoaiTSCD_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\KiemKeTaiSan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NVThanhLyvaDieuChuyenNgoaiTSCD_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\HoaDonTaiSan_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\CT_NghiepVuDieuChuyenNoiBo_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\CT_NghiepVuSuaChuaLon_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\CT_NVNgungvaTaiSuDungTSCD_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\DieuChinhGiaChiTietTSCaBiet_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\DieuChinhGiaPhuTungTSCaBiet_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\DieuChinhGiaTri_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\BoSungDungCuPhuTung_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\DuyetTSCD_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\HopDongTaiSan_DerivedFactory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NghiepVuDieuChuyenNoiBo_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NghiepVuKhauHaoHaoMon_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NghiepVuSuaChuaLon_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\NVNgungvaTaiSuDungTSCD_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\TaiSanCoDinhCaBiet_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\TaiSanCoDinhCaBiet_Factory.MinhTai.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\TaiSanCoDinhCaBiet_PhongBan_Factory.cs" />
+    <Compile Include="Main\Factory\TSCD\BangNghiepVu\TiLeKhauHaoTheoTaiKhoan_Factory.cs" />
+    <Compile Include="Main\Model\MainModel.Designer.cs">
+      <DependentUpon>MainModel.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Main\Model\PartialModel\OldErp\tblChungTu.cs" />
+    <Compile Include="Main\Model\PartialModel\OldErp\tblTienTe.cs" />
+    <Compile Include="Main\Model\PartialModel\OldErp\tblHoaDon.cs" />
+    <Compile Include="Main\Model\PartialModel\OldErp\tblHopDong.cs" />
+    <Compile Include="Main\Model\PartialModel\OldErp\tblDinhKhoan.cs" />
+    <Compile Include="Main\Model\PartialModel\Sys\DynamicMenu\AppMenu.cs" />
+    <Compile Include="Main\Model\PartialModel\Sys\ReportStorage\Report.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblDieuChinhGiaPhuTungTSCaBiet.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblDieuChinhGiaChiTietTSCaBiet.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblChiTietTaiSanCaBiet.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblBoSungDungCuPhuTung.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblChiTietDieuChinhGiaTri.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblCT_NghiepVuDieuChuyenNoiBo.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblDuyetTSCD.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblInMaVachTaiSanCoDinhCaBiet.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblKiemKeTaiSan.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblNghiepVuDieuChuyenNoiBo.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblNVNgungvaTaiSuDungTSCD.cs" />
+    <Compile Include="Main\Model\PartialModel\TSCD\tblTaiSanCoDinhCaBiet.cs" />
+    <Compile Include="Main\Predefined\BoPhanMapping.cs" />
+    <Compile Include="Main\Predefined\CoKhongEnum.cs" />
+    <Compile Include="Main\Predefined\ChiTietNguyenGiaTSCD_LoaiPhanBietNVEnum.cs" />
+    <Compile Include="Main\Predefined\GioiTinhEnum.cs" />
+    <Compile Include="Main\Predefined\HinhThucGiamTaiSanEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiBaoCaoDuAnEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiBaoCaoKHHMEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiTimProjectEnum.cs" />
+    <Compile Include="Main\Predefined\ProjectReportTreeNodeEnum.cs" />
+    <Compile Include="Main\Predefined\ProjectReportTreeNodeTagInfo.cs" />
+    <Compile Include="Main\Predefined\TinhTrangHoaDonEnum.cs" />
+    <Compile Include="Main\Predefined\ThueSuatVATEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiThanhLyTaiSanEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiTimChungTuEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiNguonMuaEnum.cs" />
+    <Compile Include="Main\Predefined\TinhChatSoDuTaiKhoanEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiTimHoaDonEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiHoaDonTaiSanEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiTimHopDongEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiGhiTangTSCDCaBietEnum.cs" />
+    <Compile Include="Main\Predefined\LoaiNghiepVuTaiSanEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERP_Library\ERP_Library.csproj">
+      <Project>{2F87F479-1441-4C3D-89A5-152732CC9684}</Project>
+      <Name>ERP_Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PSC.ERP.Common\PSC_ERP_Common.csproj">
+      <Project>{feee9942-007b-405f-9f65-3c41a42e6f46}</Project>
+      <Name>PSC_ERP_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PSC.ERP.Core\PSC_ERP_Core.csproj">
+      <Project>{7BB0057E-88FF-412C-81E8-4B3455C86FA6}</Project>
+      <Name>PSC_ERP_Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PSC.ERP.Global\PSC_ERP_Global.csproj">
+      <Project>{db2a42f1-ef35-426b-9321-576960f0b99a}</Project>
+      <Name>PSC_ERP_Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PSC.ERP.Util\PSC_ERP_Util.csproj">
+      <Project>{521ADDF6-2360-4AD7-AA10-1DCDFD1AFEFE}</Project>
+      <Name>PSC_ERP_Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Main\Model\MainModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MainModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Main\Model\MainModel.edmx.diagram">
+      <DependentUpon>MainModel.edmx</DependentUpon>
+    </None>
+    <None Include="Main\Model\MainModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MainModel1.Meta.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Main\Factory\Sys\ReportStorage\" />
+    <Folder Include="Main\Model\PartialModel\Sys\Log\" />
+    <Folder Include="Main\Model\PartialModel\Sys\Security\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

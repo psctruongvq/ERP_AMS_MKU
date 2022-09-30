@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEEE9942-007B-405F-9F65-3C41A42E6F46}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PSC_ERP_Common</RootNamespace>
+    <AssemblyName>PSC.ERP.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\BIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Log4netCustom">
+      <HintPath>..\packages\Log4netCustom.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ado.Net\Cache.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\AccessMode.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Attach.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\clsSchema\SchemaClass.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\clsSchema\SchemaColectionEnum.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\clsSchema\SchemaMethod.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\clsSchema\SchemaPKeysFKeysIsIdentityKeys.cs" />
+    <Compile Include="Ado.Net\DataProvider.cs" />
+    <Compile Include="Ado.Net\Factory.cs" />
+    <Compile Include="Ado.Net\ParameterStruct.cs" />
+    <Compile Include="Ado.Net\SafeDataReader.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Connect.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Count.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Delete.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\ExecuteScalar.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Fill.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Get.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Insert.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\LinhTinh.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Prepare.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Property.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\ExecuteReader.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\ExecuteNonQuery.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Transaction.cs" />
+    <Compile Include="Ado.Net\SpeedDataAccess\Update.cs" />
+    <Compile Include="AttributeUtil.cs" />
+    <Compile Include="AutoWaitForm.cs" />
+    <Compile Include="CustomDialog\frmDialogChonTuNgayDenNgayVaCheckChonInChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonTuNgayDenNgayVaCheckChonInChiTiet.Designer.cs">
+      <DependentUpon>frmDialogChonTuNgayDenNgayVaCheckChonInChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonNamVaCheckChonInChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonNamVaCheckChonInChiTiet.Designer.cs">
+      <DependentUpon>frmDialogChonNamVaCheckChonInChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonTuNgayDenNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonTuNgayDenNgay.Designer.cs">
+      <DependentUpon>frmDialogChonTuNgayDenNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmDialogChonNam.Designer.cs">
+      <DependentUpon>frmDialogChonNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EncryptUtil.cs" />
+    <Compile Include="Extension\ThreadEx.cs" />
+    <Compile Include="GridUtil.Filter.cs" />
+    <Compile Include="GridUtil.HidePlusButton.cs" />
+    <Compile Include="GridUtil.BooleanCheckAllBox.cs" />
+    <Compile Include="GridUtil.STT.cs" />
+    <Compile Include="GridUtil.Select.cs" />
+    <Compile Include="GridUtil.CopyCell.cs" />
+    <Compile Include="StreamUtil.cs" />
+    <Compile Include="TaskUtil.cs" />
+    <Compile Include="TreeUtil.ExportToExcel.cs" />
+    <Compile Include="GridUtil.ExportToExcel.cs" />
+    <Compile Include="RadioUtil.RadioGroup.cs" />
+    <Compile Include="ControlUtil.cs" />
+    <Compile Include="GridUtil.DeleteHelper.cs" />
+    <Compile Include="DateTimeUtil.cs" />
+    <Compile Include="Delegate.cs" />
+    <Compile Include="DialogUtil.cs" />
+    <Compile Include="CustomDialog\frmOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmOK.Designer.cs">
+      <DependentUpon>frmOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog\frmOK_Cancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmOK_Cancel.Designer.cs">
+      <DependentUpon>frmOK_Cancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDialog\frmYes_No.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomDialog\frmYes_No.Designer.cs">
+      <DependentUpon>frmYes_No.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompareTypeEnum.cs" />
+    <Compile Include="GridUtil.DoubleClickHelper.cs" />
+    <Compile Include="RadioUtil.cs" />
+    <Compile Include="RibbonUtil.AutoSelectedRibbonPage.cs" />
+    <Compile Include="TracingLogPropertyKeys.cs" />
+    <Compile Include="AutoTracingLogProperty.cs" />
+    <Compile Include="ComboUtil.cs" />
+    <Compile Include="Extension\IEnumerableEx.cs" />
+    <Compile Include="FormUtil.cs" />
+    <Compile Include="GridUtil.cs" />
+    <Compile Include="PriceToStringUtil.cs" />
+    <Compile Include="ProgressBar\IProgressCallback.cs" />
+    <Compile Include="ProgressBar\ProgressWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WriteSimpleLogFileUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomDialog\frmDialogChonTuNgayDenNgayVaCheckChonInChiTiet.resx">
+      <DependentUpon>frmDialogChonTuNgayDenNgayVaCheckChonInChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDialog\frmDialogChonNamVaCheckChonInChiTiet.resx">
+      <DependentUpon>frmDialogChonNamVaCheckChonInChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDialog\frmDialogChonTuNgayDenNgay.resx">
+      <DependentUpon>frmDialogChonTuNgayDenNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDialog\frmDialogChonNam.resx">
+      <DependentUpon>frmDialogChonNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDialog\frmYes_No.resx">
+      <DependentUpon>frmYes_No.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDialog\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar\ProgressWindow.resx">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PSC.ERP.Global\PSC_ERP_Global.csproj">
+      <Project>{db2a42f1-ef35-426b-9321-576960f0b99a}</Project>
+      <Name>PSC_ERP_Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PSC.ERP.Util\PSC_ERP_Util.csproj">
+      <Project>{521addf6-2360-4ad7-aa10-1dcdfd1afefe}</Project>
+      <Name>PSC_ERP_Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

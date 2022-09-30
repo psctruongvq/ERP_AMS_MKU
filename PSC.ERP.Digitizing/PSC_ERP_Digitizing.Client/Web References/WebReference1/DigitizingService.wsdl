@@ -1,0 +1,1792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.pscvietnam.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.pscvietnam.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.pscvietnam.com/">
+      <s:element name="SplitFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maPhanHe" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SplitFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SplitFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DownloadSourceFileLarge_ByFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maPhanHe" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DownloadSourceFileLarge_ByFileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_DownloadSourceFileLarge_ByFileNameResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchContent_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentMiningIndexingPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchContent_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchContent_StringResult" type="tns:ArrayOfIndexPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfIndexPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IndexPackage" nillable="true" type="tns:IndexPackage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IndexPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpdateDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IO_DeleteFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_DeleteFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryDeleteFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryDeleteFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_TryDeleteFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_DeleteDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_DeleteDirResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryDeleteDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryDeleteDirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_TryDeleteDirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_CreateDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_CreateDirectoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryCreateDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryCreateDirectoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Index_GetPdfContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdfPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Index_GetPdfContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Index_GetPdfContentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Index_GetFileContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Index_GetFileContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Index_GetFileContentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Index_DeleteDocIndexing_ByDocId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directoryIndexing" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Index_DeleteDocIndexing_ByDocIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_ExistsFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_ExistsFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_ExistsFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_ExistsDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_ExistsDirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_ExistsDirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_MoveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourceFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_MoveFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryMoveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourceFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryMoveFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_TryMoveFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_RenameFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_RenameFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryRenameFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newFileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryRenameFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_TryRenameFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_RenameDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directoryPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newDirectoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_RenameDirResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryRenameDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="directoryPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newDirectoryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryRenameDirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_TryRenameDirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_MoveDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourceDirPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destDirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_MoveDirResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IO_TryMoveDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sourceDirPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destDirPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IO_TryMoveDirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IO_TryMoveDirResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DeleteHotFolderLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DeleteHotFolderLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileNameWithoutExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtensionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_CheckExistSourceFile_ByFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_CheckExistSourceFile_ByFileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QuickHelper_CheckExistSourceFile_ByFileNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_CheckExistConvertedFile_ByFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_CheckExistConvertedFile_ByFileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QuickHelper_CheckExistConvertedFile_ByFileNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_ResetIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_ResetIndexResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_GetFileContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docFileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_GetFileContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_GetFileContentResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_GetFileContent_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docFileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_GetFileContent_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_GetFileContent_StringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_MakeFileIndex">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docFileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_MakeFileIndexResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_DeleteIndex_ByDocFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docFileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DeleteIndex_ByDocFileNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_DeleteIndex_ByDocId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DeleteIndex_ByDocIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_SearchContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="binaryContent" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileContentInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_SearchContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_SearchContentResult" type="tns:ArrayOfIndexPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_SearchContent_String">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="content" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maPhanHe" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileContentInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_SearchContent_StringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_SearchContent_StringResult" type="tns:ArrayOfIndexPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DownloadSourceFile_ByFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileNameWithExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="maPhanHe" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DownloadSourceFile_ByFileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_DownloadSourceFile_ByFileNameResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DownloadConvertedFile_ByFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileNameWithExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_DownloadConvertedFile_ByFileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuickHelper_DownloadConvertedFile_ByFileNameResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_UploadPdfFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFileNameWithExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_UploadPdfFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="QuickHelper_UploadFileLargeSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFileNameWithExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buffer" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileSize" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="maPhanHe" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuickHelper_UploadFileLargeSizeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UploadPdfFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destDirPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadPdfFileResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UploadFileLargeSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buffer" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="offset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileLargeSizeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DownloadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="publicKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pdfPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SplitFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SplitFile" />
+  </wsdl:message>
+  <wsdl:message name="SplitFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SplitFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DownloadSourceFileLarge_ByFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DownloadSourceFileLarge_ByFileName" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DownloadSourceFileLarge_ByFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DownloadSourceFileLarge_ByFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchContent_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchContent_String" />
+  </wsdl:message>
+  <wsdl:message name="SearchContent_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchContent_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_DeleteFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_DeleteFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryDeleteFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryDeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryDeleteFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryDeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_DeleteDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_DeleteDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_DeleteDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_DeleteDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryDeleteDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryDeleteDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryDeleteDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryDeleteDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_CreateDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:IO_CreateDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IO_CreateDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:IO_CreateDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryCreateDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryCreateDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryCreateDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryCreateDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Index_GetPdfContentSoapIn">
+    <wsdl:part name="parameters" element="tns:Index_GetPdfContent" />
+  </wsdl:message>
+  <wsdl:message name="Index_GetPdfContentSoapOut">
+    <wsdl:part name="parameters" element="tns:Index_GetPdfContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Index_GetFileContentSoapIn">
+    <wsdl:part name="parameters" element="tns:Index_GetFileContent" />
+  </wsdl:message>
+  <wsdl:message name="Index_GetFileContentSoapOut">
+    <wsdl:part name="parameters" element="tns:Index_GetFileContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Index_DeleteDocIndexing_ByDocIdSoapIn">
+    <wsdl:part name="parameters" element="tns:Index_DeleteDocIndexing_ByDocId" />
+  </wsdl:message>
+  <wsdl:message name="Index_DeleteDocIndexing_ByDocIdSoapOut">
+    <wsdl:part name="parameters" element="tns:Index_DeleteDocIndexing_ByDocIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_ExistsFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_ExistsFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_ExistsFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_ExistsFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_ExistsDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_ExistsDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_ExistsDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_ExistsDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_MoveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_MoveFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_MoveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_MoveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryMoveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryMoveFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryMoveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryMoveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_RenameFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_RenameFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_RenameFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_RenameFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryRenameFileSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryRenameFile" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryRenameFileSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryRenameFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_RenameDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_RenameDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_RenameDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_RenameDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryRenameDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryRenameDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryRenameDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryRenameDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_MoveDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_MoveDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_MoveDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_MoveDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryMoveDirSoapIn">
+    <wsdl:part name="parameters" element="tns:IO_TryMoveDir" />
+  </wsdl:message>
+  <wsdl:message name="IO_TryMoveDirSoapOut">
+    <wsdl:part name="parameters" element="tns:IO_TryMoveDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteHotFolderLogSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteHotFolderLog" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteHotFolderLogSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteHotFolderLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtensionSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtensionSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteDocument_ByDocFileNameWithoutExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_CheckExistSourceFile_ByFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_CheckExistSourceFile_ByFileName" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_CheckExistSourceFile_ByFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_CheckExistSourceFile_ByFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_CheckExistConvertedFile_ByFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_CheckExistConvertedFile_ByFileName" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_CheckExistConvertedFile_ByFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_CheckExistConvertedFile_ByFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_ResetIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_ResetIndex" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_ResetIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_ResetIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_GetFileContentSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_GetFileContent" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_GetFileContentSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_GetFileContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_GetFileContent_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_GetFileContent_String" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_GetFileContent_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_GetFileContent_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_MakeFileIndexSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_MakeFileIndex" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_MakeFileIndexSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_MakeFileIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteIndex_ByDocFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteIndex_ByDocFileName" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteIndex_ByDocFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteIndex_ByDocFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteIndex_ByDocIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteIndex_ByDocId" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DeleteIndex_ByDocIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DeleteIndex_ByDocIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_SearchContentSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_SearchContent" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_SearchContentSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_SearchContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_SearchContent_StringSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_SearchContent_String" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_SearchContent_StringSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_SearchContent_StringResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DownloadSourceFile_ByFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DownloadSourceFile_ByFileName" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DownloadSourceFile_ByFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DownloadSourceFile_ByFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DownloadConvertedFile_ByFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DownloadConvertedFile_ByFileName" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_DownloadConvertedFile_ByFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_DownloadConvertedFile_ByFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_UploadPdfFileSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_UploadPdfFile" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_UploadPdfFileSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_UploadPdfFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_UploadFileLargeSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:QuickHelper_UploadFileLargeSize" />
+  </wsdl:message>
+  <wsdl:message name="QuickHelper_UploadFileLargeSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:QuickHelper_UploadFileLargeSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPdfFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPdfFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadPdfFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPdfFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileLargeSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFileLargeSize" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileLargeSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileLargeSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DigitizingServiceSoap">
+    <wsdl:operation name="SplitFile">
+      <wsdl:input message="tns:SplitFileSoapIn" />
+      <wsdl:output message="tns:SplitFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadSourceFileLarge_ByFileName">
+      <wsdl:input message="tns:QuickHelper_DownloadSourceFileLarge_ByFileNameSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DownloadSourceFileLarge_ByFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchContent_String">
+      <wsdl:input message="tns:SearchContent_StringSoapIn" />
+      <wsdl:output message="tns:SearchContent_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_DeleteFile">
+      <wsdl:input message="tns:IO_DeleteFileSoapIn" />
+      <wsdl:output message="tns:IO_DeleteFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryDeleteFile">
+      <wsdl:input message="tns:IO_TryDeleteFileSoapIn" />
+      <wsdl:output message="tns:IO_TryDeleteFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_DeleteDir">
+      <wsdl:input message="tns:IO_DeleteDirSoapIn" />
+      <wsdl:output message="tns:IO_DeleteDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryDeleteDir">
+      <wsdl:input message="tns:IO_TryDeleteDirSoapIn" />
+      <wsdl:output message="tns:IO_TryDeleteDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_CreateDirectory">
+      <wsdl:input message="tns:IO_CreateDirectorySoapIn" />
+      <wsdl:output message="tns:IO_CreateDirectorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryCreateDirectory">
+      <wsdl:input message="tns:IO_TryCreateDirectorySoapIn" />
+      <wsdl:output message="tns:IO_TryCreateDirectorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Index_GetPdfContent">
+      <wsdl:input message="tns:Index_GetPdfContentSoapIn" />
+      <wsdl:output message="tns:Index_GetPdfContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Index_GetFileContent">
+      <wsdl:input message="tns:Index_GetFileContentSoapIn" />
+      <wsdl:output message="tns:Index_GetFileContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Index_DeleteDocIndexing_ByDocId">
+      <wsdl:input message="tns:Index_DeleteDocIndexing_ByDocIdSoapIn" />
+      <wsdl:output message="tns:Index_DeleteDocIndexing_ByDocIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_ExistsFile">
+      <wsdl:input message="tns:IO_ExistsFileSoapIn" />
+      <wsdl:output message="tns:IO_ExistsFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_ExistsDir">
+      <wsdl:input message="tns:IO_ExistsDirSoapIn" />
+      <wsdl:output message="tns:IO_ExistsDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_MoveFile">
+      <wsdl:input message="tns:IO_MoveFileSoapIn" />
+      <wsdl:output message="tns:IO_MoveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryMoveFile">
+      <wsdl:input message="tns:IO_TryMoveFileSoapIn" />
+      <wsdl:output message="tns:IO_TryMoveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_RenameFile">
+      <wsdl:input message="tns:IO_RenameFileSoapIn" />
+      <wsdl:output message="tns:IO_RenameFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryRenameFile">
+      <wsdl:input message="tns:IO_TryRenameFileSoapIn" />
+      <wsdl:output message="tns:IO_TryRenameFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_RenameDir">
+      <wsdl:input message="tns:IO_RenameDirSoapIn" />
+      <wsdl:output message="tns:IO_RenameDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryRenameDir">
+      <wsdl:input message="tns:IO_TryRenameDirSoapIn" />
+      <wsdl:output message="tns:IO_TryRenameDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_MoveDir">
+      <wsdl:input message="tns:IO_MoveDirSoapIn" />
+      <wsdl:output message="tns:IO_MoveDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryMoveDir">
+      <wsdl:input message="tns:IO_TryMoveDirSoapIn" />
+      <wsdl:output message="tns:IO_TryMoveDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteHotFolderLog">
+      <wsdl:input message="tns:QuickHelper_DeleteHotFolderLogSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DeleteHotFolderLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension">
+      <wsdl:input message="tns:QuickHelper_DeleteDocument_ByDocFileNameWithoutExtensionSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DeleteDocument_ByDocFileNameWithoutExtensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_CheckExistSourceFile_ByFileName">
+      <wsdl:input message="tns:QuickHelper_CheckExistSourceFile_ByFileNameSoapIn" />
+      <wsdl:output message="tns:QuickHelper_CheckExistSourceFile_ByFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_CheckExistConvertedFile_ByFileName">
+      <wsdl:input message="tns:QuickHelper_CheckExistConvertedFile_ByFileNameSoapIn" />
+      <wsdl:output message="tns:QuickHelper_CheckExistConvertedFile_ByFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_ResetIndex">
+      <wsdl:input message="tns:QuickHelper_ResetIndexSoapIn" />
+      <wsdl:output message="tns:QuickHelper_ResetIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_GetFileContent">
+      <wsdl:input message="tns:QuickHelper_GetFileContentSoapIn" />
+      <wsdl:output message="tns:QuickHelper_GetFileContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_GetFileContent_String">
+      <wsdl:input message="tns:QuickHelper_GetFileContent_StringSoapIn" />
+      <wsdl:output message="tns:QuickHelper_GetFileContent_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_MakeFileIndex">
+      <wsdl:input message="tns:QuickHelper_MakeFileIndexSoapIn" />
+      <wsdl:output message="tns:QuickHelper_MakeFileIndexSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteIndex_ByDocFileName">
+      <wsdl:input message="tns:QuickHelper_DeleteIndex_ByDocFileNameSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DeleteIndex_ByDocFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteIndex_ByDocId">
+      <wsdl:input message="tns:QuickHelper_DeleteIndex_ByDocIdSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DeleteIndex_ByDocIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_SearchContent">
+      <wsdl:input message="tns:QuickHelper_SearchContentSoapIn" />
+      <wsdl:output message="tns:QuickHelper_SearchContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_SearchContent_String">
+      <wsdl:input message="tns:QuickHelper_SearchContent_StringSoapIn" />
+      <wsdl:output message="tns:QuickHelper_SearchContent_StringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadSourceFile_ByFileName">
+      <wsdl:input message="tns:QuickHelper_DownloadSourceFile_ByFileNameSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DownloadSourceFile_ByFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadConvertedFile_ByFileName">
+      <wsdl:input message="tns:QuickHelper_DownloadConvertedFile_ByFileNameSoapIn" />
+      <wsdl:output message="tns:QuickHelper_DownloadConvertedFile_ByFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_UploadPdfFile">
+      <wsdl:input message="tns:QuickHelper_UploadPdfFileSoapIn" />
+      <wsdl:output message="tns:QuickHelper_UploadPdfFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_UploadFileLargeSize">
+      <wsdl:input message="tns:QuickHelper_UploadFileLargeSizeSoapIn" />
+      <wsdl:output message="tns:QuickHelper_UploadFileLargeSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPdfFile">
+      <wsdl:input message="tns:UploadPdfFileSoapIn" />
+      <wsdl:output message="tns:UploadPdfFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileLargeSize">
+      <wsdl:input message="tns:UploadFileLargeSizeSoapIn" />
+      <wsdl:output message="tns:UploadFileLargeSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input message="tns:DownloadFileSoapIn" />
+      <wsdl:output message="tns:DownloadFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DigitizingServiceSoap" type="tns:DigitizingServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SplitFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/SplitFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadSourceFileLarge_ByFileName">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DownloadSourceFileLarge_ByFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchContent_String">
+      <soap:operation soapAction="http://www.pscvietnam.com/SearchContent_String" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_DeleteFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_DeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryDeleteFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryDeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_DeleteDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_DeleteDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryDeleteDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryDeleteDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_CreateDirectory">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_CreateDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryCreateDirectory">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryCreateDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Index_GetPdfContent">
+      <soap:operation soapAction="http://www.pscvietnam.com/Index_GetPdfContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Index_GetFileContent">
+      <soap:operation soapAction="http://www.pscvietnam.com/Index_GetFileContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Index_DeleteDocIndexing_ByDocId">
+      <soap:operation soapAction="http://www.pscvietnam.com/Index_DeleteDocIndexing_ByDocId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_ExistsFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_ExistsFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_ExistsDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_ExistsDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_MoveFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_MoveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryMoveFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryMoveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_RenameFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_RenameFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryRenameFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryRenameFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_RenameDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_RenameDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryRenameDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryRenameDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_MoveDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_MoveDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryMoveDir">
+      <soap:operation soapAction="http://www.pscvietnam.com/IO_TryMoveDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteHotFolderLog">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteHotFolderLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_CheckExistSourceFile_ByFileName">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_CheckExistSourceFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_CheckExistConvertedFile_ByFileName">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_CheckExistConvertedFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_ResetIndex">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_ResetIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_GetFileContent">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_GetFileContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_GetFileContent_String">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_GetFileContent_String" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_MakeFileIndex">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_MakeFileIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteIndex_ByDocFileName">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteIndex_ByDocFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteIndex_ByDocId">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteIndex_ByDocId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_SearchContent">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_SearchContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_SearchContent_String">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_SearchContent_String" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadSourceFile_ByFileName">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DownloadSourceFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadConvertedFile_ByFileName">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_DownloadConvertedFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_UploadPdfFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_UploadPdfFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_UploadFileLargeSize">
+      <soap:operation soapAction="http://www.pscvietnam.com/QuickHelper_UploadFileLargeSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPdfFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/UploadPdfFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileLargeSize">
+      <soap:operation soapAction="http://www.pscvietnam.com/UploadFileLargeSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://www.pscvietnam.com/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DigitizingServiceSoap12" type="tns:DigitizingServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SplitFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/SplitFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadSourceFileLarge_ByFileName">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DownloadSourceFileLarge_ByFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchContent_String">
+      <soap12:operation soapAction="http://www.pscvietnam.com/SearchContent_String" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_DeleteFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryDeleteFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryDeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_DeleteDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_DeleteDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryDeleteDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryDeleteDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_CreateDirectory">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_CreateDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryCreateDirectory">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryCreateDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Index_GetPdfContent">
+      <soap12:operation soapAction="http://www.pscvietnam.com/Index_GetPdfContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Index_GetFileContent">
+      <soap12:operation soapAction="http://www.pscvietnam.com/Index_GetFileContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Index_DeleteDocIndexing_ByDocId">
+      <soap12:operation soapAction="http://www.pscvietnam.com/Index_DeleteDocIndexing_ByDocId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_ExistsFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_ExistsFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_ExistsDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_ExistsDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_MoveFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_MoveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryMoveFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryMoveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_RenameFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_RenameFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryRenameFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryRenameFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_RenameDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_RenameDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryRenameDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryRenameDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_MoveDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_MoveDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IO_TryMoveDir">
+      <soap12:operation soapAction="http://www.pscvietnam.com/IO_TryMoveDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteHotFolderLog">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteHotFolderLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteDocument_ByDocFileNameWithoutExtension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_CheckExistSourceFile_ByFileName">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_CheckExistSourceFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_CheckExistConvertedFile_ByFileName">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_CheckExistConvertedFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_ResetIndex">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_ResetIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_GetFileContent">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_GetFileContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_GetFileContent_String">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_GetFileContent_String" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_MakeFileIndex">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_MakeFileIndex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteIndex_ByDocFileName">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteIndex_ByDocFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DeleteIndex_ByDocId">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DeleteIndex_ByDocId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_SearchContent">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_SearchContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_SearchContent_String">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_SearchContent_String" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadSourceFile_ByFileName">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DownloadSourceFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_DownloadConvertedFile_ByFileName">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_DownloadConvertedFile_ByFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_UploadPdfFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_UploadPdfFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickHelper_UploadFileLargeSize">
+      <soap12:operation soapAction="http://www.pscvietnam.com/QuickHelper_UploadFileLargeSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPdfFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/UploadPdfFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileLargeSize">
+      <soap12:operation soapAction="http://www.pscvietnam.com/UploadFileLargeSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="http://www.pscvietnam.com/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DigitizingService">
+    <wsdl:port name="DigitizingServiceSoap" binding="tns:DigitizingServiceSoap">
+      <soap:address location="http://servererp:246/DigitizingService.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="DigitizingServiceSoap12" binding="tns:DigitizingServiceSoap12">
+      <soap12:address location="http://servererp:246/DigitizingService.ASMX" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

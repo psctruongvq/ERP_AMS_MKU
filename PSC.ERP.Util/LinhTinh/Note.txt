@@ -1,0 +1,60 @@
+﻿        public virtual DataTable ToDataTable(List<TEntity> list)
+        {
+            DataTable resultDataTable = new DataTable("results");
+            DataRow resultDataRow = null;
+            DataTable dt = new DataTable();
+            System.Reflection.PropertyInfo[] itemProperties = null;
+
+            // Meta Data.
+            // Each item property becomes a column in the table 
+            // Build an array of Property Getters, one for each Property 
+            // in the item class. Can pass anything as [item] it is just a 
+            // place holder parameter, later we will invoke it with the
+            // correct item. This code assumes the runtime does not change
+            // the ORDER in which the proprties are returned.
+            if (list == null)
+            {
+            }
+            else
+            {
+                if (list.Count > 0)
+                {
+                    itemProperties = list[0].GetType().GetProperties();
+                    //MsgBox(_itemProperties.Length)
+
+                    foreach (System.Reflection.PropertyInfo p in itemProperties)
+                    {
+                        //dt.Columns.Add(p.Name, _
+                        //          p.GetGetMethod.ReturnType())
+                        dt.Columns.Add(p.Name, Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType);
+                    }
+
+
+                    foreach (TEntity item in list)
+                    {
+                        // Get the data from this item into a DataRow
+                        // then add the DataRow to the DataTable.
+                        // Eeach items property becomes a colunm.
+                        //
+                        itemProperties = item.GetType().GetProperties();
+                        resultDataRow = dt.NewRow();
+                        foreach (System.Reflection.PropertyInfo p in itemProperties)
+                        {
+                            //_resultDataRow(p.Name) = p.GetValue(item, Nothing)
+                            if (p.GetValue(item, null) == null)
+                            {
+                                resultDataRow[p.Name] = DBNull.Value;
+                            }
+                            else
+                            {
+                                resultDataRow[p.Name] = (!Microsoft.VisualBasic.Information.IsDBNull(p.GetValue(item, null)) ? p.GetValue(item, null) : DBNull.Value);
+                            }
+
+                        }
+                        dt.Rows.Add(resultDataRow);
+                    }
+                }
+            }
+            //'MsgBox(dt.Rows.Count)
+            return dt;
+        }

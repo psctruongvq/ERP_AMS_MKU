@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <rd:DataSourceID>62658c57-2e41-48cd-bfc0-f85fcb254e40</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="TenBoPhan">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Param_TenBoPhan</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TieuDeReport">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Param_MaNguon</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Ngay">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NguoiLap">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ThuTruong">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_4</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BanPhuTrach">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_5</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SoDuDau">
+      <DataType>Float</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_6</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LuyKe">
+      <DataType>Float</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_7</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.25in</RightMargin>
+  <LeftMargin>0.5in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox4">
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>2.5in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>=Parameters!TenBoPhan.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Width>2.5in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>ĐÀI TRUYỀN HÌNH TP.HCM</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>0.5in</Top>
+        <Width>8.875in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.375in</Height>
+        <Value>=Parameters!TieuDeReport.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <rd:DefaultName>textbox9</rd:DefaultName>
+        <Top>0.875in</Top>
+        <Width>8.875in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>=Parameters!Ngay.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.25in</BottomMargin>
+  <rd:ReportID>6615bb83-8726-4c50-8704-193eb721b565</rd:ReportID>
+  <PageWidth>297mm</PageWidth>
+  <DataSets>
+    <DataSet Name="ERP_Library_BaoCaoTieuMucList">
+      <Fields>
+        <Field Name="DienGiai">
+          <DataField>DienGiai</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaTieuMuc">
+          <DataField>MaTieuMuc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NgayLap">
+          <DataField>NgayLap</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NgayLapString">
+          <DataField>NgayLapString</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SoChungTu">
+          <DataField>SoChungTu</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SoTien">
+          <DataField>SoTien</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DummyDataSource</DataSourceName>
+        <CommandText />
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ERP_Library</rd:DataSetName>
+        <rd:TableName>BaoCaoTieuMucList</rd:TableName>
+        <rd:ObjectDataSourceType>ERP_Library.BaoCaoTieuMucList, ERP_Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>9.125in</Width>
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox14">
+        <Top>1.125in</Top>
+        <Width>1.125in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.5in</Left>
+        <Height>0.25in</Height>
+        <Value>Lũy Kế:</Value>
+      </Textbox>
+      <Textbox Name="textbox13">
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Top>0.875in</Top>
+        <Width>1.125in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.5in</Left>
+        <Height>0.25in</Height>
+        <Value>Số Dư :</Value>
+      </Textbox>
+      <Textbox Name="txt_LuyKe">
+        <Top>1.125in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <Format>#,##0</Format>
+          <TextAlign>Right</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.625in</Left>
+        <Height>0.25in</Height>
+        <Value>=Parameters!LuyKe.Value</Value>
+      </Textbox>
+      <Textbox Name="txt_SoDuDau">
+        <Top>0.875in</Top>
+        <Width>2.375in</Width>
+        <Style>
+          <FontSize>12pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <Format>#,##0</Format>
+          <TextAlign>Right</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.625in</Left>
+        <Height>0.25in</Height>
+        <Value>=Parameters!SoDuDau.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox12">
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <Top>1.71875in</Top>
+        <Width>2.25in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3.375in</Left>
+        <Height>0.28125in</Height>
+        <Value>=Parameters!BanPhuTrach.Value.ToString()</Value>
+      </Textbox>
+      <Textbox Name="textbox10">
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <Top>1.71875in</Top>
+        <Width>2.875in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.28125in</Height>
+        <Value>=Parameters!NguoiLap.Value </Value>
+      </Textbox>
+      <Matrix Name="matrix1">
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1.375in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <ZIndex>1</ZIndex>
+        <DataSetName>ERP_Library_BaoCaoTieuMucList</DataSetName>
+        <RowGroupings>
+          <RowGrouping>
+            <Width>1.5in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_SoChungTu">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SoChungTu.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="textbox7">
+                    <rd:DefaultName>textbox7</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>700</FontWeight>
+                      <TextAlign>Center</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <CanGrow>true</CanGrow>
+                    <Value>Tổng Cộng</Value>
+                  </Textbox>
+                </ReportItems>
+              </Subtotal>
+              <ReportItems>
+                <Textbox Name="SoChungTu">
+                  <rd:DefaultName>SoChungTu</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>4</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!SoChungTu.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>0.875in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!NgayLap.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox3">
+                  <rd:DefaultName>textbox3</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <Format>dd/MM/yyyy</Format>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>3</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!NgayLap.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+          <RowGrouping>
+            <Width>2.75in</Width>
+            <DynamicRows>
+              <Grouping Name="matrix1_RowGroup3">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DienGiai.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <ReportItems>
+                <Textbox Name="textbox5">
+                  <rd:DefaultName>textbox5</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <TextAlign>Left</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>2</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!DienGiai.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+          </RowGrouping>
+        </RowGroupings>
+        <Top>0.03125in</Top>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <Height>0.25in</Height>
+            <DynamicColumns>
+              <Grouping Name="matrix1_MaTieuMuc">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!MaTieuMuc.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Subtotal>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <FontWeight>700</FontWeight>
+                      <Format>#,##0</Format>
+                      <TextAlign>Center</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <ZIndex>5</ZIndex>
+                    <CanGrow>true</CanGrow>
+                    <Value>Tổng Cộng         </Value>
+                  </Textbox>
+                </ReportItems>
+              </Subtotal>
+              <ReportItems>
+                <Textbox Name="MaTieuMuc">
+                  <rd:DefaultName>MaTieuMuc</rd:DefaultName>
+                  <Style>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <FontWeight>700</FontWeight>
+                    <Format>#,##0</Format>
+                    <TextAlign>Center</TextAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <ZIndex>6</ZIndex>
+                  <CanGrow>true</CanGrow>
+                  <Value>=Fields!MaTieuMuc.Value</Value>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+          </ColumnGrouping>
+        </ColumnGroupings>
+        <Width>7.875in</Width>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox1">
+              <rd:DefaultName>textbox1</rd:DefaultName>
+              <Style>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <FontWeight>700</FontWeight>
+                <TextAlign>Center</TextAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+              <ZIndex>7</ZIndex>
+              <CanGrow>true</CanGrow>
+              <Value>="Chứng Từ \ Tiểu Mục "</Value>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <MatrixRows>
+          <MatrixRow>
+            <Height>0.25in</Height>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="SoTien">
+                    <rd:DefaultName>SoTien</rd:DefaultName>
+                    <Style>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <Format>#,##0</Format>
+                      <TextAlign>Right</TextAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <ZIndex>1</ZIndex>
+                    <CanGrow>true</CanGrow>
+                    <Value>=Sum(Fields!SoTien.Value)</Value>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+          </MatrixRow>
+        </MatrixRows>
+        <Height>0.75in</Height>
+      </Matrix>
+      <Textbox Name="textbox11">
+        <Top>1.5in</Top>
+        <Width>2.625in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>6in</Left>
+        <Height>0.25in</Height>
+        <Value>=Parameters!ThuTruong.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>2.25in</Height>
+  </Body>
+  <Language>vi</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox44">
+        <Top>0.125in</Top>
+        <Width>8.625in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>="Trang " &amp; Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.625in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+  <PageHeight>210mm</PageHeight>
+</Report>
